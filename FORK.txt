@@ -1,0 +1,19 @@
+Horizon, from horizon-rust/horizon at 41501a243, with this fork's own changes:
+
+- The launcher plays offline by default, with a name from the first run
+  (`offline-play` branch of the upstream clone): `Settings::offline_play`
+  replaces the hidden developer option, the first run asks for a name
+  (`launcher/src/name_sheet.rs`), and `download_for_owner` prepares the
+  version from Mojang's public download server without an account.
+- The launcher no longer updates itself: its release lookup, the signed
+  in-place replacement, the restart prompt and the CLI's launcher half are
+  gone. Game updates (Versions page, `horizon-launcher update`) stay.
+
+Everything else, and the design of the game itself, is upstream's: see
+https://github.com/horizon-rust/horizon (MIT; LICENSE and
+THIRD_PARTY_NOTICES.md are kept here as they were).
+
+Not an official Minecraft product, nor approved by or associated with Mojang
+or Microsoft. Horizon contains no Minecraft code, assets or data: the launcher
+downloads them from Mojang's server and prepares them on your machine, for
+your own copy of Java Edition 26.3.
